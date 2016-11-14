@@ -4,9 +4,10 @@ from __future__ import division
 import math
 
 
-class LorentzFactor(object):
-    SPEED_OF_LIGHT = 299792458
+SPEED_OF_LIGHT = 299792458
 
+
+class LorentzFactor(object):
     @staticmethod
     def get_beta(velocity, is_percent):
         if is_percent:
@@ -30,3 +31,9 @@ class TimeDilation(LorentzFactor):
         Dilation relative to an external observer
         """
         return time / TimeDilation.lorentz_factor(velocity, is_percent)
+
+
+class LengthContradiction(LorentzFactor):
+    @staticmethod
+    def get_proper_length(length, velocity, is_percent=True):
+        return length / LengthContradiction.lorentz_factor(velocity, is_percent)
