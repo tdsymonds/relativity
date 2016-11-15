@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
+from relativity import constants
 
 import math
-
-
-SPEED_OF_LIGHT = 299792458
 
 
 class LorentzFactor(object):
@@ -12,7 +10,7 @@ class LorentzFactor(object):
     def get_beta(velocity, is_percent):
         if is_percent:
             return velocity
-        return velocity / SPEED_OF_LIGHT
+        return velocity / constants.SPEED_OF_LIGHT
 
     @staticmethod
     def lorentz_factor(velocity, is_percent):
